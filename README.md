@@ -47,3 +47,25 @@ export GPG_TTY=$(tty)
 git config --global commit.gpgsign true
 git config --global tag.gpgSign true
 ```
+
+## Optional configuration
+Add a new user to GPG key
+
+1 - Edit the GPG key
+```sh
+gpg --edit-key gpg_key_id
+
+# A interactive edit mode will open
+
+# Run the adduid command and provide the new Name and new Email to be added:
+adduid
+
+# Select the new user
+uid 2
+
+# Mark the selected user as trusted
+trust
+
+# Save the changes
+save
+```
